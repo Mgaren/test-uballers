@@ -1,0 +1,85 @@
+<div class="connectionbar">
+    <form action="/user/verifyUser" class="connection-form "method="post">
+        <div class="info">
+            <p>
+                Adresse e-mail
+            </p>
+            <input type="email" placeholder="Votre login" name="incoming_email">
+        </div>
+        <div class="info">
+            <p>
+                Mot de passe
+            </p>
+            <input type="password" placeholder="Votre mot de passe" name="incoming_password">
+            <p>
+                <a href="#" class="info forgotten">Informations de compte oubliées?</a>
+            </p>
+        </div>
+        <div>
+            <p class="tobehidden">
+                To be hidden.
+            </p>
+            <div>
+                <button class="button" type="submit">Connexion</button>
+            </div>
+            {% if error is not empty %}
+                <p>
+                    Identifiants incorrects
+                </p>
+            {% endif %}
+        </div>
+
+    </form>
+</div>
+<div class="message">
+    {% if double is not empty %}
+        <p style= "color: red; font-weight: bold" ;>
+            {{ double }}
+        </p>
+    {% endif %}
+</div>
+<div class="inscription">
+    <div>
+        <h2>
+            Inscription
+        </h2>
+        <p>
+            C'est gratuit(et ça le restera toujours)
+        </p>
+    </div>
+
+    <form action="/user/add" class="grid-container" method="post">
+        <div class="firstname">
+            <input type="text" placeholder="Prénom" name="firstname">
+        </div>
+        <div class="lastname">
+            <input type="text" placeholder="Nom" name="lastname">
+        </div>
+        <div class="email">
+            <input type="email" placeholder="Email" name="email" >
+        </div>
+        <div class="emailconfirmation">
+            <input type="email" placeholder="Confirmer email" name="emailconfirmation">
+        </div>
+        <div class="password">
+            <input type="password" placeholder="Nouveau mot de passe" name="password">
+        </div>
+        <label class="item-data" for="birth_date">Date de naissance</label>
+        <div class="birthday">
+            <input type="date" name="birth_date">
+            <a> Pourquoi indiquer ma date de naissance? </a>
+        </div>
+        <div class="genderF">
+            <input type="radio" name="gender" id="femme" value="femme"><label for="femme">Femme</label>
+        </div>
+        <div class="genderH">
+            <input type="radio" name="gender" id="homme" value="homme"><label for="homme">Homme</label>
+        </div>
+        <div class="text">
+            En cliquant sur Inscription, vous acceptez nos Conditions et indiquqez que vous avez lu notre Politique d'utilisation des données,
+            y compris notre Utilisation des cookies.
+            Vous pourrez recevoir des notifications par texto de la part de Facebook et pouvez vous désabonner à tout moment.
+        </div>
+        <input class="inscrip" type="submit" value="Inscription">
+    </form>
+</div>

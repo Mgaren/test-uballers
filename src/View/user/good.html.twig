@@ -1,0 +1,7 @@
+{% block content %}
+    <p>bienvenue {{ user.firstname }} sur le site Uballers</p>
+    <p>Nom : {{ user.lastname }}</p>
+    <p>Email : {{ user.email }}
+    <a href="/user/delete/{{user.id}}">Supprimer</a>
+    <a href="/user/index">Back</a>
+{% endblock %}
