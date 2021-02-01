@@ -52,9 +52,10 @@ class UserManager extends AbstractManager
      * Get the mail and password of the user
      * @param string $userEmail
      * @param string $userPassword
-     * @return string
+     * @return mixed|string
      */
-    public function getUser(string $userEmail, string $userPassword): string
+
+    public function getUser(string $userEmail, string $userPassword)
     {
         if (password_verify($userPassword, $this->getPassword($userEmail)) === true) {
             $hashedPassword = $this->getPassword($userEmail);
